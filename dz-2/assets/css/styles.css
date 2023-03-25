@@ -24,7 +24,7 @@ p {
 a {
     color: #2F58CD;
 }
-header, footer {
+.header, .footer {
     background: #F1F1F1;
     height: 50px;
 }
@@ -90,7 +90,7 @@ aside nav a:hover {
 section {
     padding: 35px 0 0;
 }
-footer {
+.footer {
     margin-top: 35px;
 }
 iframe {
