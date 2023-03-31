@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>simple form</title>
+</head>
+
+<body>
+    <main>
+        <form action="#" autocomplete="on" id="my_form"
+            onsubmit="alert(decodeURI(new URLSearchParams(Array.from(new FormData(document.getElementById('my_form')))).toString()));return false;">
+            <label for="name">Повне ім'я</label>
+            <input id="name" type="text" name="name" autofocus>
+
+            <label for="email">Еmail</label>
+            <input id="email" type="email" name="email">
+
+            <label for="password">Пароль</label>
+            <input id="password" type="password" name="password">
+
+            <label for="passwordAgain">Пароль ще раз</label>
+            <input id="passwordAgain" type="password" name="password-repeat">
+
+            <div class="radio-button-group">
+                <span>Стать</span>
+                <label for="man">
+                    <input type="radio" id="man" name="gender" value="man" checked>
+                    чоловіча</label>
+                <label for="feman">
+                    <input type="radio" id="feman" name="gender" value="feman">
+                    жіноча</label>
+            </div>
+            <label for="age">Вік</label>
+            <input id="age" type="number" maxlength="2" name="age" min="1" max="100">
+            <label for="cours">Курс</label>
+            <select name="cours" id="cours">
+                <option value="">-= Виберіть курс =-</option>
+                <option value="front-end">фроненд разробник</option>
+                <option value="back-end">бекенд розробник</option>
+                <option value="pm">проєкт менеджер</option>
+                <option value="qa">тестувальник</option>
+            </select>
+            <label for="address">Повна адреса</label>
+            <textarea id="address" name="address" rows="3"
+                placeholder="Країна, регіон, місто/ селище, вулиця"></textarea>
+            <label for="agred">
+                <input type="checkbox" id="agred" name="agred">
+                Я погоджуюсь з обробкою персональних данних
+            </label>
+            <div class="buttonHolder">
+                <button type="reset">Очистити форму</button>
+                <button type="submit">Зареєструватися</button>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>

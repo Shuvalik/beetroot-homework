@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, input, textarea {
+    font: 17px sans-serif;
+    background-color: #EFEFEF;
+}
+body {
+    height: 100vh;
+}
+label {
+    font-weight: normal;
+}
+main {
+    position: relative;
+    top: 50%;
+}
+form {
+    width: 510px;
+    margin: 0 auto;
+    border-radius: 20px;
+    border: 2px solid grey;
+    padding: 25px;
+    overflow: hidden;
+    margin-top: -20%;
+}
+fieldset {
+    padding: 25px;
+    border-radius: 20px;
+    margin-top: 25px;
+}
+fieldset:first-child{
+    margin: 0;
+}
+form > label, form > input, 
+form > textarea, form > select,
+form fieldset > label, form fieldset > input, 
+form fieldset > textarea, form fieldset > select {
+    width: 50%;
+    float: left;
+    margin-bottom: 18px;
+}
+input, select {
+    border: 1px solid grey;
+    padding: 5px 12px;
+}
+option {
+    font-size: 17px;
+}
+.radio-button-group {
+    float: left;
+    width: 100%;
+    margin-bottom: 18px;
+}
+.radio-button-group > span {
+    width: 50%;
+    float: left;
+}
+.radio-button-group label,
+.radio-button-group input  {
+    cursor: pointer;
+}
+.radio-button-group label:last-child {
+    margin-left: 20px;
+}
+input[type="number"] {
+    width: auto;
+}
+input[type="number"]::after { 
+   content: "";
+   display: block; 
+   clear: both;
+}
+label[for="agred"] {
+    width: 100%;
+    font-size: 14px;
+    cursor: pointer;
+}
+textarea {
+    font-size: 17px;
+}
+label[for="address"] {
+    margin-top: 40px;
+}
+.buttonHolder {
+    text-align: center;
+    width: 100%;
+    float: left;
+}
+button {
+    padding: 5px 12px;
+    font-size: 17px;
+    cursor: pointer;
+}
+.buttonHolder button:first-child {
+    margin-right: 15px;
+}
