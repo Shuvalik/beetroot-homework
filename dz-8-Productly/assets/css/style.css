@@ -1,0 +1,132 @@
+/*==variables==*/
+:root {
+    --text-color: #544837;
+    --orange-color: #f90;
+    --grey-color: #2F281E;
+}
+/*== reset ==*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+ul {
+    list-style-type: none;
+}
+img {
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+    object-fit: cover;
+}
+a, button {
+    transition: all .2s ease-in;
+    text-decoration: none;
+}
+/*== main start ==*/
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 1.625;
+    color: var(--text-color);
+}
+.container {
+    width: min(90%, 1200px);
+    margin-inline: auto;
+}
+h1 {
+    font-size: 2.75rem;
+    line-height: 1.24;
+    margin-bottom: 32px;
+}
+/*--button section--*/
+.btn {
+    cursor: pointer;
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 4px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 16px;
+}
+.btn-white {
+    background-color: #fff;
+    color: var(--grey-color);
+    border: 1px solid #BCD0E5;
+    padding: 13px 26px;
+}
+.btn-white:hover {
+    background-color: #BCD0E5;
+    color: #fff;
+}
+.btn-orange {
+    background-color: var(--orange-color);
+    color: #fff;
+    border: 1px solid var(--orange-color);
+}
+.btn-orange:hover {
+    color: var(--orange-color);
+    background-color: #fff;
+}
+/*== main end ==*/
+
+
+/*== header start ==*/
+#header .container {
+    display: flex;
+    height: 80px;
+    align-items: center;
+    justify-content: space-between;
+}
+#header nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    line-height: 1.75;
+}
+#header nav a {
+    color: var(--grey-color);
+}
+#header nav a:hover {
+    color: var(--orange-color);
+}
+#header .header-buttons {
+    font-size: 0;
+}
+#header .header-buttons .btn {
+    margin-left: 31px;
+}
+/*== header end ==*/
+
+/*== campaign section start ==*/
+#campaign .container {
+    padding: 70px 0 0;
+    font-size: 1.125rem;
+    line-height: 1.55;
+}
+#campaign .two-columns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#campaign .two-columns > * {
+    width: calc(100% - 54%);
+}
+#campaign .two-columns > figure {
+    width: 54%;
+}
+#campaign img {
+    width: 100%;
+    height: auto;
+}
+#campaign .btn {
+    padding: 12px 42px;
+    margin-top: 27px;
+}
+/*== campaign section end ==*/
+/*== footer start ==*/
+/*== footer end ==*/
