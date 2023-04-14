@@ -117,25 +117,16 @@ mark {
 /*== header end ==*/
 
 /*== main section start ==*/
-
 article section {
     margin-bottom: 60px;
 }
 article section ul li {
     position: relative;
     margin-bottom: 38px;
+    list-style-position: inside;
 }
-article section ul li::first-letter {
-    margin-left: 20px;
-}
-article section ul li::before {
+article section ul li::marker {
     content: '+';
-    width: auto;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
     font-weight: 700;
-
 }
 /*== main section end ==*/
