@@ -1,0 +1,141 @@
+/*==variables==*/
+:root {
+    --text-color: #000;
+}
+/*== reset ==*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+img {
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+    object-fit: cover;
+}
+/*== main start ==*/
+body {
+    font-family: 'PTSans', sans-serif;
+    font-size: 1.75rem;
+    line-height: 1.7;
+    letter-spacing: 0.21px;
+    color: var(--text-color);
+}
+.container {
+    width: min(90%, 1200px);
+    margin-inline: auto;
+}
+p {
+    margin-bottom: 30px;
+}
+mark {
+    background-color: #DADADA;
+    display: inline-block;
+}
+/*h1 {
+}*/
+.h2 {
+    font-family: 'Francois-One';
+    font-weight: 400;
+    font-size: 2.25rem;
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: inline-block;
+    margin-bottom: 38px;
+}
+.lang-lable {
+    font-family: 'Tourney';
+    font-size: 1.4rem;
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+.top-small-text {
+    font-family: 'Farro-Light';
+    font-weight: 300;
+    font-size: 1.2rem;
+    position: relative;
+    top: -13px;
+    left: 0;
+    letter-spacing: 0;
+}
+.underline-text {
+    text-decoration: underline;
+}
+/*== main end ==*/
+
+
+/*== header start ==*/
+#header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    text-transform: uppercase;
+    margin-bottom: 70px;
+}
+#header .container > div {
+    display: flex;
+    gap: 51px;
+}
+#header ul {
+    font-size: 0;
+}
+#header ul li {
+    display: inline-block;
+    font-size: 1.375rem;
+    line-height: 1.27;
+    position: relative;
+    font-family: 'Staatliches';
+    letter-spacing: 0.8px;
+}
+#header ul li + li {
+    margin-left: 10px;
+    padding-left: 17px;
+}
+#header ul li + li::before {
+    content: '/';
+    width: auto;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+/*== header end ==*/
+
+/*== main section start ==*/
+
+article section {
+    margin-bottom: 60px;
+}
+article section ul li {
+    position: relative;
+    margin-bottom: 38px;
+}
+article section ul li::first-letter {
+    margin-left: 20px;
+}
+article section ul li::before {
+    content: '+';
+    width: auto;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: 700;
+
+}
+/*== main section end ==*/
