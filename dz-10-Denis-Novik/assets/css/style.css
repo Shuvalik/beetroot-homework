@@ -201,10 +201,6 @@ small {
 }
 .social-group li, .social-group li a  {
     display: inline-block;
-    font-size: 18px;
-}
-.social-group li span {
-    vertical-align: middle;
 }
 .social-group li + li {
     margin-left: 50px;
