@@ -41,3 +41,9 @@
     src: url('../fonts/Tourney-SemiBold.woff2') format('woff2');
     font-weight: 600;
 }
+@font-face {
+    font-display: swap;
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular.woff2') format('woff2');
+    font-weight: 400;
+}
