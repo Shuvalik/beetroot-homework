@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/form-styler/jquery.formstyler.css">
+    <link rel="stylesheet" href="assets/css/font.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Web-forms</title>
+</head>
+
+<body>
+    <header id="header">
+        <div class="container">
+            <button class="btn" data-content="#create-account">Create an Account</button>
+            <button class="btn not-active" data-content="#profile">Profile</button>
+        </div>
+    </header>
+    <main>
+        <div class="container" id="create-account">
+            <h2 class="h2">Create an Account</h2>
+            <form method="post" action="#" id="create-account-form"
+                onsubmit="alert(decodeURI(new URLSearchParams(Array.from(new FormData(document.getElementById('create-account-form')))).toString()));return false;">
+                <div class="form-element w50">
+                    <label for="first-name">First Name</label>
+                    <input type="text" name="first-name" id="first-name" required>
+                </div>
+                <div class="form-element w50">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" name="last-name" id="last-name" required>
+                </div>
+                <div class="form-element">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email" required>
+                    <span class="add-info">We'll never share your email with anyone else.</span>
+                </div>
+                <div class="form-element radio-button-group">
+                    <label for="male">
+                        <input type="radio" name="gender" id="male" checked>
+                        Male
+                    </label>
+                    <label for="female">
+                        <input type="radio" name="gender" id="female">
+                        Female
+                    </label>
+                </div>
+                <div class="form-element w50">
+                    <label for="country">Country</label>
+                    <select name="country" id="country" required>
+                        <option>Select</option>
+                        <option>item 1</option>
+                        <option>item 2</option>
+                    </select>
+                </div>
+                <div class="form-element w50">
+                    <label for="city">City</label>
+                    <input type="text" name="city" id="city" required>
+                </div>
+                <div class="form-element">
+                    <button type="submit" class="btn w100">Sign Up</button>
+                </div>
+                <p class="add-info">
+                    By clicking the 'Sign Up' button, you confirm that you accept our
+                    <a href="#" title="Terms of Use">Terms of Use</a>
+                    and <a href="#" title="Privacy Policy">Privacy Policy</a>.
+                </p>
+                <footer>
+                    <span>Have an account?</span>
+                    <a href="#">Log In</a>
+                </footer>
+            </form>
+        </div>
+        <div class="container hide" id="profile">
+            <h2 class="h2">Profile</h2>
+            <form method="post" action="#" id="profile-form"
+                onsubmit="alert(decodeURI(new URLSearchParams(Array.from(new FormData(document.getElementById('profile-form')))).toString()));return false;">
+                <div class="profile-image">
+                    <img id="img-profile" src="assets/images/profile-image.png" alt="profile image"
+                        title="profile image">
+                </div>
+                <div class="form-element w50 file-choose">
+                    <div>
+                        <label for="profile-image" class="hide">Foto</label>
+                        <input type="file" name="profile-image" id="profile-image" data-placeholder=" " data-browse=" ">
+                        <p class="add-info">Up to 1 MB (300x300 px)</p>
+                    </div>
+                    <button type="reset">
+                        <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M1.00001 10.6667C1.00001 11.4 1.60001 12 2.33334 12H7.66668C8.40001 12 9.00001 11.4 9.00001 10.6667V2.66667H1.00001V10.6667V10.6667ZM9.66668 0.666667H7.33334L6.66668 0H3.33334L2.66668 0.666667H0.333344V2H9.66668V0.666667V0.666667Z"
+                                fill="#969696" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="form-element w50">
+                    <label for="profile-name">Name</label>
+                    <input type="text" name="profile-name" id="profile-name" required>
+                </div>
+                <div class="form-element w50">
+                    <label for="profile-email">E-mail</label>
+                    <input type="email" name="profile-email" id="profile-email" required>
+                </div>
+                <div class="form-element w50">
+                    <label for="profile-country">Country</label>
+                    <select name="profile-country" id="profile-country" required>
+                        <option>Select</option>
+                        <option>item 1</option>
+                        <option>item 2</option>
+                    </select>
+                </div>
+                <div class="form-element w50">
+                    <label for="profile-city">City</label>
+                    <input type="text" name="profile-city" id="profile-city">
+                </div>
+                <div class="form-element w50">
+                    <label for="profile-zipcode">Zip Code</label>
+                    <input type="text" pattern="[0-9]*" name="profile-zipcode" id="profile-zipcode">
+                </div>
+                <div class="form-element w50">
+                    <label for="profile-phone">Phone Number</label>
+                    <input type="tel" name="profile-phone" id="profile-phone" required>
+                </div>
+                <div class="form-element">
+                    <button type="submit" class="btn">Update</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="assets/js/jQuery/jquery.min.js"></script>
+    <script src="assets/js/form-styler/jquery.formstyler.js"></script>
+    <script>
+        (function ($) {
+            $(function () {
+                $('input, select').styler({
+                    selectSearch: true,
+                });
+            });
+            $('#header button').click(function () {
+                if ($(this).hasClass('not-active')) {
+                    $(this).siblings().addClass('not-active');
+                    $(this).removeClass('not-active');
+                    let idContent = $(this).attr('data-content');
+                    $(idContent).removeClass('hide').siblings().addClass('hide');
+                }
+            });
+        })(jQuery);
+        // a little js)
+        const inputImg = document.getElementById('profile-image')
+        const img = document.getElementById('img-profile')
+
+        function getImg(event) {
+
+            const file = event.target.files[0];
+            let url = window.URL.createObjectURL(file);
+            img.src = url
+        }
+
+        inputImg?.addEventListener('change', getImg)
+    </script>
+</body>
+
+</html>

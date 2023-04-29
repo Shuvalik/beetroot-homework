@@ -1,0 +1,143 @@
+/*==variables==*/
+/*== reset ==*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+  object-fit: cover;
+}
+
+/*== main start ==*/
+body {
+  font-family: "todo", sans-serif;
+  font-size: 0.875rem;
+  line-height: 24px;
+  color: #333;
+}
+
+.container {
+  width: min(90%, 1170px);
+  margin-inline: auto;
+}
+
+.open-sans {
+  font-family: "ss", sans-serif;
+}
+
+.roboto {
+  font-family: "rob", sans-serif;
+}
+
+.h1 {
+  font-weight: 900;
+  font-size: 3.75rem;
+  line-height: 66px;
+  text-transform: uppercase;
+  color: #666;
+}
+
+/*== main end ==*/
+.wrapper {
+  padding: 121px 0 122px;
+}
+
+.header {
+  text-align: center;
+}
+.header .separator {
+  width: min(100%, 450px);
+  height: 1px;
+  background-color: #ffcc00;
+  position: relative;
+}
+.header .separator .icon-wrap {
+  display: inline-block;
+  padding: 0 5px;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.sup-title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  /*color*/
+}
+
+/*== header start ==*/
+/*== header end ==*/
+/*== main section start ==*/
+.main-wrap {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+}
+.main-wrap .column {
+  padding: 65px 0;
+}
+
+.image-wrap {
+  position: relative;
+  padding: 15px;
+}
+.image-wrap::after, .image-wrap::before {
+  content: "";
+  width: 100px;
+  height: 100px;
+  border-top: 1px solid #ffcc00;
+  position: absolute;
+  top: 0;
+}
+.image-wrap::after {
+  right: 0;
+  border-right: 1px solid #ffcc00;
+}
+.image-wrap::before {
+  left: 0;
+  border-left: 1px solid #ffcc00;
+}
+
+.image-wrap2 {
+  border: 1px solid #ffcc00;
+}
+.image-wrap2::after, .image-wrap2::before {
+  content: "";
+  width: 100px;
+  height: 100px;
+  border-bottom: 1px solid #ffcc00;
+  position: absolute;
+  bottom: 0;
+}
+.image-wrap2::after {
+  right: 0;
+  border-right: 1px solid #ffcc00;
+}
+.image-wrap2::before {
+  left: 0;
+  border-left: 1px solid #ffcc00;
+}
+
+.image-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #ffcc00;
+}
+
+/*== main section end ==*/

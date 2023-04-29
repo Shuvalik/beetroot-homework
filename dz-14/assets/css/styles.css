@@ -1,0 +1,45 @@
+.icon-holder {
+  width: 64px;
+  height: 64px;
+  border: 1px solid rgba(21, 101, 216, 0.1);
+  border-radius: 16px;
+  position: relative;
+}
+.icon-holder svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: 36px;
+  transition: all 0.2s ease;
+}
+.icon-holder svg.blue-icon {
+  opacity: 1;
+}
+.icon-holder svg.green-icon {
+  opacity: 0;
+}
+
+.item:hover {
+  _border: 1px solid #3DB370;
+}
+.item:hover .icon-holder {
+  border-color: rgba(61, 179, 112, 0.1);
+}
+.item:hover .icon-holder svg.blue-icon {
+  opacity: 0;
+}
+.item:hover .icon-holder svg.green-icon {
+  opacity: 1;
+}
+
+.sotial-links {
+  list-style: none;
+}
+.sotial-links li a path {
+  fill: #0d0d0d;
+}
+.sotial-links li a:hover path {
+  fill: #3DB370;
+}

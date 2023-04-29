@@ -1,0 +1,53 @@
+.icon-holder {
+    width: 64px;
+    height: 64px;
+    border: 1px solid rgba(21, 101, 216, 0.1);
+    border-radius: 16px;
+    position: relative;
+    svg {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        height: 36px;
+        transition: all .2s ease;
+        &.blue-icon {
+            opacity: 1;
+        }
+        &.green-icon {
+            opacity: 0;
+        }
+    }
+}
+.item {
+    &:hover {
+        .icon-holder {
+            border-color: rgba(61, 179, 112, 0.1);
+            svg {
+                &.blue-icon {
+                    opacity: 0;
+                }
+                &.green-icon {
+                    opacity: 1;
+                }
+            }
+        }
+        _border: 1px solid #3DB370;
+    }
+}
+.sotial-links {
+    list-style: none;
+    li {
+        a {
+            path {
+                fill: #0d0d0d;
+            }
+            &:hover {
+                path {
+                    fill: #3DB370;
+                }
+            }
+        }
+    }
+}
