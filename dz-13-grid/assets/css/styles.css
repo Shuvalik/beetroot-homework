@@ -89,7 +89,7 @@ section {
 }
 .wrapper .box:hover img {
   transition: all 0.2s ease;
-  scale: 1.25;
+  transform: scale(1.25);
 }
 .wrapper .box .bottom-holder {
   position: absolute;

@@ -85,7 +85,7 @@ section {
             }
             img {
                 transition: all 0.2s ease;
-                scale: 1.25;
+                transform: scale(1.25);
             }
         }
         .bottom-holder {
