@@ -1,0 +1,18 @@
+@font-face {
+    font-display: swap;
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular.woff2') format('woff2');
+    font-weight: 400;
+}
+@font-face {
+    font-display: swap;
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Medium.woff2') format('woff2');
+    font-weight: 500;
+}
+@font-face {
+    font-display: swap;
+    font-family: 'Delius-Unicase';
+    src: url('../fonts/DeliusUnicase-Regular.woff2') format('woff2');
+    font-weight: 400;
+}
