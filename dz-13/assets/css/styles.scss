@@ -1,10 +1,12 @@
+@use "font" as *;
 /*==variables==*/
 $color-yellow: #ffcc00;
 $color-title: #666;
 $color-text: #333;
 
-@mixin fz($size-px) {
+@mixin font($size-px, $lh) {
     font-size: ($size-px / 16) * 1rem;
+    line-height: $lh / $size-px;
 }
 /*== reset ==*/
 * {
@@ -26,59 +28,76 @@ img {
     vertical-align: top;
     object-fit: cover;
 }
+ul {
+    list-style: none;
+}
 /*== main start ==*/
 body {
-    font-family: 'todo', sans-serif;
-    @include fz(14);
-    line-height: 24px;
-    color: $color-text;
+    @include font_family($raleway, 500);
+    @include font(14, 24);
+    color: $color-text; 
 }
 .container {
     width: min(90%, 1170px);
     margin-inline: auto;
 }
-.open-sans {
-    font-family: 'ss', sans-serif;
-}
-.roboto {
-    font-family: 'rob', sans-serif;
-}
 .h1 {
-    font-weight: 900;
-    @include fz(60);
-    line-height: 66px;
+    @include font_family($roboto, 900);
+    @include font(60, 66);
     text-transform: uppercase;
+    color: $color-yellow;
+    margin-bottom: 41px;
+}
+.h2 {
+    @include font_family($roboto, 900);
+    @include font(36, 42);
+    color: $color-title;
+    margin-bottom: 31px;
+}
+.sup-title {
+    text-transform: uppercase;
+    color: #898F8F;
+    @include font(18, 24);
+    margin-bottom: 15px;
+}
+.summer-text {
+    @include font_family($raleway, 400);
+    @include font(24, 36);
+    color: $color-title;
+    margin-bottom: 22px;
+}
+.btn {
+    display: inline-block;
+    padding: 5px 10px 3px;
+    border: 1px solid $color-yellow;
+    text-transform: uppercase;
+    @include font_family($openSans, 700);
+    @include font(14, 14);
     color: $color-title;
 }
-
-
 /*== main end ==*/
 .wrapper {
     padding: 121px 0 122px;
 }
+/*== header start ==*/
 .header{
     text-align: center;
     .separator {
         width: min(100%, 450px);
         height: 1px;
+        margin: 0 auto;
         background-color: $color-yellow;
         position: relative;
         .icon-wrap {
             display: inline-block;
             padding: 0 5px;
+            margin-top: 4px;
             position: absolute;
-            transform: translateX(-50%);
+            transform: translate(-50%, -50%);
+            background: #fff;
         }
     }
 }
-.sup-title {
-    @include fz(18);
-    font-weight: 500;
-    text-transform: uppercase;
-    margin-bottom: 15px;/*color*/
-}
-/*== header start ==*/
-
 /*== header end ==*/
 
 /*== main section start ==*/
@@ -87,11 +106,43 @@ body {
     grid-template-columns: repeat(2, 50%);
     .column {
         padding: 65px 0;
+        margin: 50px 0;
+        text-align: center;
+        .h2 {
+            padding: 5px 0 21px;
+            position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                bottom: -1px;
+                height: 1px;
+                width: 100px;
+                background-color: $color-yellow;
+                transform: translateX(-50%);
+            }
+        }
+        .description {
+            margin: 0 13% 25px;
+            padding-bottom: 20px;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%);
+                width: 50px;
+                height: 4px;
+                background: linear-gradient(to right, $color-yellow 0, $color-yellow 20%, #fff 20%, #fff 30%, $color-yellow 30%, $color-yellow 70%, #fff 70%, #fff 80%, $color-yellow 80%, $color-yellow 100%);
+            }
+        }
     }
 }
-.image-wrap {
+.img-wrap {
     position: relative;
     padding: 15px;
+    margin-right: 16px;
     &::after, &::before {
         content: '';
         width: 100px;
@@ -110,7 +161,7 @@ body {
     }
 }
 
-.image-wrap2 {
+.img-wrap2 {
     border: 1px solid $color-yellow;
     &::after, &::before {
         content: '';
@@ -132,8 +183,18 @@ body {
 .image-column {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     border-right: 1px solid $color-yellow;
 }
+.sotial-links {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 49px;
+    a, svg {
+        display: block;
+    }
+}
+
 /*== main section end ==*/
 
