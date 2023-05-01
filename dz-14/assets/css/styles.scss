@@ -1,9 +1,91 @@
+@use "font" as *;
+/*==variables==*/
+$main-color: #16133D;
+$thema-color: #3DB370;
+$grey-color: #7690A8;
+
+@mixin font($size-px, $lh) {
+    font-size: ($size-px / 16) * 1rem;
+    line-height: $lh / $size-px;
+}
+/*== reset ==*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+/*== main start ==*/
+body {
+    @include font_family($roboto, 400);
+    @include font(16, 28);
+    color: $main-color; 
+}
+.container {
+    width: min(90%, 1170px);
+    margin-inline: auto;
+}
+.h1 {
+    @include font_family($raleway, 600);
+    @include font(40, 52);
+    margin-bottom: 34px;
+    letter-spacing: 1.2px;
+}
+.sub-title {
+    color: $grey-color; 
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.h2 {
+    @include font_family($roboto, 400);
+    @include font(24, 22);
+    margin-bottom: 14px;
+}
+p {
+    margin-bottom: 21px;
+}
+a {
+    color: $thema-color;
+    @include font_family($roboto, 600);
+}
+/*== main end ==*/
+
+/*== main section page start ==*/
+
+/*--header--*/
+#header {
+    padding: 22px 0 12px;
+    border-bottom: 1px solid #EFEEF3;
+}
+
+/*--main--*/
+main {
+    section {
+        padding: 97px 0;
+    }
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+    }
+}
 .icon-holder {
     width: 64px;
     height: 64px;
     border: 1px solid rgba(21, 101, 216, 0.1);
     border-radius: 16px;
     position: relative;
+    margin-bottom: 29px;
     svg {
         position: absolute;
         left: 50%;
@@ -21,6 +103,9 @@
     }
 }
 .item {
+    border: 1px solid #E5EAF4;
+    border-radius: 8px;
+    padding: 40px;
     &:hover {
         .icon-holder {
             border-color: rgba(61, 179, 112, 0.1);
@@ -33,13 +118,33 @@
                 }
             }
         }
-        _border: 1px solid #3DB370;
+        border-color: #3DB370;
+    }
+}
+/*--footer--*/
+#footer {
+    background-color: $main-color;
+    padding: 40px 0;
+    .logo-footer {
+        margin-bottom: 30px;
     }
 }
 .sotial-links {
-    list-style: none;
+    display: flex;
+    gap: 10px;
     li {
+        width: 38px;
+        height: 38px;
+        background: #EFEEF3;
+        border-radius: 5px;
         a {
+            display: block;
+            svg {
+                    width: 20px;
+                    padding: 9px;
+                    display: block;
+                    box-sizing: content-box;
+                }
             path {
                 fill: #0d0d0d;
             }
@@ -48,6 +153,29 @@
                     fill: #3DB370;
                 }
             }
+        }
+    }
+}
+@media screen and (max-width: 790px) {
+    .wrapper {
+        flex-wrap: wrap;
+        .item {
+            flex: 1 0 100%;
+            padding: 20px;
+        }
+    }
+}
+@media screen and (max-width: 420px) {
+    main section {
+        padding: 40px 0;
+    }
+    .h1 {
+        @include font(30, 44);
+    }
+    .sotial-links {
+        justify-content: space-between;
+        li {
+            transform: scale(1.3);
         }
     }
 }
