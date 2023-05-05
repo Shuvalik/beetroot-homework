@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/4ed1b8e391.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/hamburger.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Productly</title>
+</head>
+
+<body>
+    <div id="mobMainMenu" onclick="openCloseMenu(document.getElementById('hamburger'))">
+        <nav>
+            <ul>
+                <li><a href="#" title="Product">Product</a></li>
+                <li><a href="#" title="Customers">Customers</a></li>
+                <li><a href="#" title="Pricing">Pricing</a></li>
+                <li><a href="#" title="Resources">Resources</a></li>
+            </ul>
+        </nav>
+        <div class="overlight"></div>
+    </div>
+    <header id="header">
+        <div class="container">
+            <a href="/" class="logo" title="Productly">
+                <img src="assets/images/logo.svg" height="32" width="200" alt="Productly logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" title="Product">Product</a></li>
+                    <li><a href="#" title="Customers">Customers</a></li>
+                    <li><a href="#" title="Pricing">Pricing</a></li>
+                    <li><a href="#" title="Resources">Resources</a></li>
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                <button type="button" class="btn btn-white">Sign In</button>
+                <button type="button" class="btn btn-orange">Sign Up</button>
+            </div>
+            <button id="hamburger" class="hamburger hamburger--squeeze" type="button" onclick="openCloseMenu(this)">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </div>
+    </header>
+    <main>
+        <section id="campaign">
+            <div class="container two-columns">
+                <div>
+                    <h1>The Design Thinking superpowers</h1>
+                    <p>Tools, tutorials, design and innovation experts, all in one place! The most intuitive way to
+                        imagine your next user
+                        experience.</p>
+                    <a href="#" class="btn btn-orange" title="Get started">Get started</a>
+                </div>
+                <figure>
+                    <img src="assets/images/campaign-image.svg" width="644" height="495" alt="">
+                </figure>
+            </div>
+        </section>
+        <section id="spots">
+            <div class="container">
+                <h2>We design tools to unveil your superpowers</h2>
+                <ul class="spots-holder">
+                    <li>
+                        <span class="icon-spot violet-icon"><i class="fa-solid fa-arrow-pointer"></i></span>
+                        <h4>First click tests</h4>
+                        <p>While most people enjoy casino gambling,</p>
+                    </li>
+                    <li>
+                        <span class="icon-spot yellow-icon"><i class="fa fa-stumbleupon fa-lg"
+                                aria-hidden="true"></i></span>
+                        <h4>Design surveys</h4>
+                        <p>Sports betting, lottery and bingo playing for the fun</p>
+                    </li>
+                    <li>
+                        <span class="icon-spot red-icon"><i class="fa-sharp fa-solid fa-heart"></i></span>
+                        <h4>Preference tests</h4>
+                        <p>The Myspace page defines the individual.</p>
+                    </li>
+                    <li>
+                        <span class="icon-spot blue-icon"><i class="fa-regular fa-hourglass-half"></i></span>
+                        <h4>Five second tests</h4>
+                        <p>Personal choices and the overall personality of the person.</p>
+                    </li>
+                </ul>
+                <button type="button" class="btn btn-orange">Sign up Now</button>
+            </div>
+        </section>
+    </main>
+    <footer id="footer">
+        <div class="container">
+            <a href="/" class="logo" title="Productly">
+                <img src="assets/images/logo.svg" height="32" width="200" alt="Productly logo">
+            </a>
+
+            <nav>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#" title="About Us">About Us</a></li>
+                    <li><a href="#" title="Blog">Blog</a></li>
+                    <li><a href="#" title="Contact">Contact</a></li>
+                    <li><a href="#" title="FAQ">FAQ</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <h3>Legal Stuff</h3>
+                <ul>
+                    <li><a href="#" title="Disclaimer">Disclaimer</a></li>
+                    <li><a href="#" title="Financing">Financing</a></li>
+                    <li><a href="#" title="Privacy Policy">Privacy Policy</a></li>
+                    <li><a href="#" title="Terms of Service">Terms of Service</a></li>
+                </ul>
+            </nav>
+            <div class="subscribe-form">
+                <h3>Knowing you're always on the best energy deal</h3>
+                <form action="#">
+                    <input type="text" value="Enter your phone Number">
+                    <button type="submit" class="btn btn-orange">Sign up Now</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function openCloseMenu(el) {
+            el.classList.toggle('is-active');
+            document.getElementById('mobMainMenu').classList.toggle('open');
+        }
+    </script>
+</body>
+
+</html>

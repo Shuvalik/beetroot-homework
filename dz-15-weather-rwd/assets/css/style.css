@@ -1,0 +1,129 @@
+/*== reset ==*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul {
+    list-style-type: none;
+}
+p {
+    margin-bottom: 25px;
+}
+/*== main start ==*/
+body {
+    font-family:  'Lucida Sans Unicode', arial;
+    font-size: 16px;
+    line-height: 25px;
+    color: #fff;
+    background-color: #3399CC;
+    border: 25px solid #2B81AC;
+}
+.container {
+    width: min(90%, 1170px);
+    margin-inline: auto;
+}
+h1 {
+    font-size: 21px;
+    line-height: 26px;
+    font-weight: normal;
+    margin-bottom: 35px;
+}
+h1 i {
+    font-size: 28px;
+}
+/*== main end ==*/
+
+/*== main section start ==*/
+#header {
+    padding: 40px 0 0;
+}
+main {
+    padding: 4px;
+    background: #fff;
+    margin-bottom: 35px;
+}
+#main-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 147px);
+    gap: 4px
+}
+#main-section li {
+    padding: 16px 0 33px;
+    text-align: center;
+    font-size: 22px;
+    line-height: 47px;
+    cursor: pointer;
+    vertical-align: top;
+    position: relative;
+}
+#main-section li > * {
+    vertical-align: middle;
+}
+#main-section li i {
+    font-size: 42px;
+}
+#main-section:hover > *:not(:hover) {
+    opacity: 0.5;
+}
+#main-section li.w50 {
+    grid-column: span 2;
+}
+#main-section li.w100 {
+    grid-column: span 4;
+}
+#main-section li.bg-blue {
+    background-color: #3399CC;
+}
+#main-section li.bg-lightblue {
+    background-color: #33CCCC;
+}
+#main-section li.bg-lightviolet {
+    background-color: #996699;
+}
+#main-section li.bg-red {
+    background-color: #C24747;
+}
+#main-section li.bg-lightred {
+    background-color: #E2674A;
+}
+#main-section li.bg-yellow {
+    background-color: #FFCC66;
+}
+#main-section li.bg-lightgreen {
+    background-color: #99CC99;
+}
+#main-section li.bg-grey {
+    background-color: #669999;
+}
+#main-section li.bg-pink {
+    background-color: #CC6699;
+}
+#main-section li.bg-green {
+    background-color: #339966;
+}
+#main-section li.bg-violet {
+    background-color: #666699;
+}
+
+/*== main section end ==*/
+/*== footer start ==*/
+#footer {
+    _margin-bottom: 94px;
+}
+/*== footer end ==*/
+/*--responsive--*/
+@media only screen and (max-width:769px) {
+    #main-section li {
+        grid-column: span 2;
+    }
+}
+@media only screen and (max-width:479px) {
+    #main-section li {
+        grid-column: span 4;
+    }
+    #main-section li.w50 {
+        grid-column: span 4;
+    }
+}
