@@ -211,6 +211,45 @@ small {
     margin-left: 50px;
 }
 /*== footer section end ==*/
+/*== mob menu ==*/
+
+    #mobMainMenu nav {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: #fff;
+        transition: all 0.5s ease;
+        transform: translateY(-100%);
+        z-index: 11;
+    }
+    #mobMainMenu.open nav {
+        transform: translateY(0);
+    }
+    #mobMainMenu a {
+        color: #828282;
+        text-decoration: none;
+        font-size: 18px;
+        letter-spacing: 0.4px; 
+        font-weight: 700;
+        padding: 35px 20px;
+        border-bottom: 1px solid #828282;
+        display: block;
+        text-align: left;
+    }
+    #mobMainMenu a.active {
+        color: #070707;
+    }
+    #mobMainMenu.open .overlight {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 10;
+    }
+    /*end*/
 
 /*--media--*/
 @media only screen and (max-width: 993px) {
@@ -250,42 +289,6 @@ small {
     }
     #mainMenu {
         display: none;
-    }
-    #mobMainMenu nav {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        background: #fff;
-        transition: all 0.5s ease;
-        transform: translateY(-100%);
-        z-index: 11;
-    }
-    #mobMainMenu.open nav {
-        transform: translateY(0);
-    }
-    #mobMainMenu a {
-        color: #828282;
-        text-decoration: none;
-        font-size: 18px;
-        letter-spacing: 0.4px; 
-        font-weight: 700;
-        padding: 35px 20px;
-        border-bottom: 1px solid #828282;
-        display: block;
-        text-align: left;
-    }
-    #mobMainMenu a.active {
-        color: #070707;
-    }
-    #mobMainMenu.open .overlight {
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 10;
     }
 }
 @media only screen and (max-width: 480px) {
