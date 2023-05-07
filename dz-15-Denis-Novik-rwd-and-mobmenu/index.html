@@ -66,8 +66,13 @@
         <section class="first-screen">
             <div class="container">
                 <h1>Denis Novik</h1>
-                <img src="assets/images/profile-foto.jpg" alt="Denis Novik" title="Denis Novik" width="970"
-                    height="387">
+                <!-- <img src="assets/images/profile-foto.jpg" alt="Denis Novik" title="Denis Novik" width="970"
+                    height="387"> -->
+                <picture>
+                    <source data-srcset="assets/images/profile-foto-mob.jpg" media="(max-width: 600px)">
+                    <img class="lazy" data-src="assets/images/profile-foto.jpg" alt="Denis Novik"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                </picture>
             </div>
         </section>
         <section id="about-me">
@@ -209,15 +214,25 @@
             <div class="container">
                 <h2>Portfolio</h2>
                 <figure>
-                    <img src="assets/images/fashion-store.jpg" alt="Online fashion store" title="Online fashion store"
-                        width="970" height="540">
+                    <!-- <img src="assets/images/fashion-store.jpg" alt="Online fashion store" title="Online fashion store"
+                        width="970" height="540"> -->
+                    <picture>
+                        <source data-srcset="assets/images/fashion-store-mob.jpg" media="(max-width: 600px)">
+                        <img class="lazy" data-src="assets/images/fashion-store.jpg" alt="Online fashion store"
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                    </picture>
                     <figcaption>
                         <a href="#" title="Online fashion store" target="_blank">Online fashion store - <br>Homepage</a>
                     </figcaption>
                 </figure>
                 <figure>
-                    <img src="assets/images/reebok_web.jpg" alt="Reebok Store" title="Reebok Store" width="970"
-                        height="540">
+                    <!-- <img src="assets/images/reebok_web.jpg" alt="Reebok Store" title="Reebok Store" width="970"
+                        height="540"> -->
+                    <picture>
+                        <source data-srcset="assets/images/reebok_web-mob.jpg" media="(max-width: 600px)">
+                        <img class="lazy" data-src="assets/images/reebok_web.jpg" alt="Reebok Store"
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                    </picture>
                     <figcaption>
                         <a href="#" title="Reebok Store" target="_blank">
                             Reebok Store - Concept
@@ -225,8 +240,13 @@
                     </figcaption>
                 </figure>
                 <figure>
-                    <img src="assets/images/braun-landing.jpg" alt="Braun Landing Page" title="Braun Landing Page"
-                        width="970" height="540">
+                    <!-- <img src="assets/images/braun-landing.jpg" alt="Braun Landing Page" title="Braun Landing Page"
+                        width="970" height="540"> -->
+                    <picture>
+                        <source data-srcset="assets/images/braun-landing-mob.jpg" media="(max-width: 600px)">
+                        <img class="lazy" data-src="assets/images/braun-landing.jpg" alt="Braun Landing Page"
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                    </picture>
                     <figcaption>
                         <a href="#" title="Braun Landing Page" target="_blank">
                             Braun Landing Page - Concept
@@ -277,7 +297,9 @@
             </p>
         </div>
     </footer>
+    <script src="assets/js/lazyload.min.js"></script>
     <script>
+        var lazyLoadInstance = new LazyLoad();
         function openCloseMenu(el) {
             el.classList.toggle('is-active');
             document.getElementById('mobMainMenu').classList.toggle('open');
