@@ -1,0 +1,28 @@
+@font-face {
+    font-display: swap;
+    font-family: 'Aleo';
+    src: url('../fonts/Aleo-Regular.woff2') format('woff2');
+    font-weight: 400;
+}
+@font-face {
+    font-display: swap;
+    font-family: 'JosefinSans';
+    src: url('../fonts/JosefinSans-Regular.woff2') format('woff2');
+    font-weight: 400;
+}
+@font-face {
+    font-display: swap;
+    font-family: 'JosefinSans';
+    src: url('../fonts/JosefinSans-Light.woff2') format('woff2');
+    font-weight: 300;
+}
+@font-face {
+    font-display: swap;
+    font-family: 'JosefinSans';
+    src: url('../fonts/JosefinSans-Bold.woff2') format('woff2');
+    font-weight: 700;
+}
+@mixin font_family($family, $weight) {
+    font-family: '#{$family}', sans-serif;
+    font-weight: $weight;
+}

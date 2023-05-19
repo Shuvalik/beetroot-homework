@@ -1,0 +1,109 @@
+@use "reset" as *;
+@use "fonts" as *;
+/*==variables==*/
+@mixin font($size-px, $lh) {
+    font-size: ($size-px / 16) * 1rem;
+    line-height: $lh / $size-px;
+}
+$text-color: #7B7B7B;
+$black-color: #000;
+/*== main start ==*/
+body {
+    @include font_family($lato, 400);
+    @include font(16, 27);
+}
+.container {
+    width: min(90%, 1170px);
+    margin-inline: auto;
+}
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: rgba(255,255,255, 0.8);
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+  padding-top: 100px;
+}
+.btn {
+    border: 0;
+    background: none;
+    cursor: pointer;
+    padding: 15px 0 15px 15px;
+}
+.h1 {
+    color: $black-color;
+    @include font_family($RedHatDisplay, 600);
+    @include font(48, 64);
+    letter-spacing: 2.4px;
+}
+/*== main end ==*/
+
+/*== header start ==*/
+.header .container {
+    height: 100px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 65px;
+    .logo {
+        padding-top: 15px;
+    }
+    nav {
+        flex: 1 0 auto;
+        ul {
+            display: flex;
+            gap: 42px;
+            justify-content: flex-end;
+        }
+        a {
+            display: inline-block;
+            position: relative;
+            text-transform: uppercase;
+            @include font(14, 17);
+            color: $black-color;
+            letter-spacing: 3.6px;
+            &::after {
+                content: '';
+                width: 0;
+                height: 1px;
+                background-color: #000;
+                position: absolute;
+                bottom: -3px;
+                left: 50%;
+                transform: translateX(-50%);
+                transition: all .3s ease;
+            }
+            &:hover, &.active {
+                &::after {
+                   width: 70%; 
+                }
+            }
+        }
+    }
+}
+/*== header end ==*/
+
+/*== main section start ==*/
+.campaign .container {
+    position: relative;
+    .h1 {
+        position: absolute;
+        left: 0;
+        top: 100px;
+        width: 60%;
+    }
+}
+/*== main section end ==*/
+
+/*== footer start ==*/
+/*== footer end ==*/
