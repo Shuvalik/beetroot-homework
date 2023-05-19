@@ -134,7 +134,7 @@ html, body {
     position: absolute;
     left: 0;
     top: 0;
-    min-height: 100vh;
+    min-height: 150vh;
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -518,13 +518,16 @@ section#steps {
             -ms-flex-pack: justify;
         justify-content: space-between;
         position: relative;
-        width: 1200px;/*!*/
+        width: 1350px;/*!*/
         margin: 0 auto;
         @media only screen and (max-width: 1360px) {
           -webkit-box-pack: center;
               -ms-flex-pack: center;
           justify-content: center;
-          width: 960px;
+          width: 1175px;
+        }
+        @media only screen and (max-width: 1200px) {
+          width: 995px;
         }
         @media only screen and (max-width: 1023px) {
           width: 100%;
@@ -540,8 +543,6 @@ section#steps {
               -ms-flex: 1 0 auto;
           flex: 1 0 auto;
           text-align: center;
-          @include font_family('Aleo', 400);
-          @include font(36, 40);
           position: relative;
           svg {
             width: 65px;
@@ -555,11 +556,15 @@ section#steps {
             box-sizing: content-box;
             padding: 0 20px
           }
-          p {
+          h4 {
             letter-spacing: 0;
             position: relative;
             z-index: 2;
+            color: #fff;
             background-color: $bg-color-dark;
+            @include font_family('Aleo', 400);
+            @include font(36, 40);
+                margin-bottom: 28px;
           }
           &::after {
             content: '';
@@ -578,15 +583,19 @@ section#steps {
         &::after {
           content: '';
           position: absolute;
-          left: 80px;
-          top: -47px;
+          left: 156px;
+          top: -43px;
           width: 618px;
           height: 618px;
           border-radius: 50%;
           border-top: 1px dashed #999;
           @media only screen and (max-width: 1360px) {
-            left: 47px;
-            top: -34px;
+                left: 92px;
+                top: -39px;
+          }
+          @media only screen and (max-width: 1200px) {
+            left: 92px;
+                top: -32px;
             width: 496px;
             height: 496px;
           }
@@ -597,15 +606,19 @@ section#steps {
         &::before {
           content: '';
           position: absolute;
-          right: 70px;
-          top: -47px;
+          right: 145px;
+          top: -40px;
           width: 618px;
           height: 618px;
           border-radius: 50%;
           border-top: 1px dashed #999;
           @media only screen and (max-width: 1360px) {
-            right: 45px;
-            top: -35px;
+                right: 93px;
+                top: -38px;
+          }
+          @media only screen and (max-width: 1200px) {
+                right: 93px;
+                top: -31px;
             width: 496px;
             height: 496px;
           }

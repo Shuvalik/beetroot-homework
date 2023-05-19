@@ -23,8 +23,8 @@
 
 <body>
   <div class="page-wrapper">
-    <div class="campaign">
-      <div class="bg-image-holder lazy" data-bg="assets/images/bg-header.jpg"></div>
+    <div class="campaign parallax" id="first-section">
+      <div id="first-bg" class="bg-image-holder lazy" data-bg="assets/images/bg-header.jpg"></div>
       <section class="text-holder container">
         <h1 class="h1">
           Bhromaon
@@ -125,19 +125,19 @@
               <svg>
                 <use xlink:href="assets/images/icons-sprite.svg#search-blue"></use>
               </svg>
-              <p>Search Places</p>
+              <h4>Search Places</h4>
             </li>
             <li>
               <svg>
                 <use xlink:href="assets/images/icons-sprite.svg#checked-circle-red"></use>
               </svg>
-              <p>Search Places</p>
+              <h4>Select Places</h4>
             </li>
             <li>
               <svg>
                 <use xlink:href="assets/images/icons-sprite.svg#alldone-blue"></use>
               </svg>
-              <p>Book & Enjoy</p>
+              <h4>Book & Enjoy</h4>
             </li>
           </ul>
         </div>
@@ -288,16 +288,37 @@
       changesHeight();
     };
 
-    window.onscroll = function () { myFunction() };
-    var header = document.getElementById("header");
-    var sticky = header.offsetTop;
-    function myFunction() {
-      if (window.pageYOffset > sticky) {
-        header.classList.add("sticky");
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > document.getElementById('first-section').offsetHeight) {
+        document.getElementById("header").classList.add("sticky");
       } else {
-        header.classList.remove("sticky");
+        document.getElementById("header").classList.remove("sticky");
       }
-    }
+    });
+
+    /*window.onload = function () {
+
+      const parallax = document.querySelector('.parallax');
+      if (parallax) {
+
+        let thresholdSets = [];
+        for (let i = 0; i <= 1.0; i += 0.005) {
+          thresholdSets.push(i);
+        }
+        const callback = function (entries, observer) {
+          const scrollTopProcent = window.pageYOffset / parallax.offsetHeight * 100;
+          setParallaxItemsStyle(scrollTopProcent);
+        }
+        const observer = new IntersectionObserver(callback, {
+          threshold: thresholdSets
+        });
+        observer.observe(document.querySelector('#first-bg'));
+        function setParallaxItemsStyle(scrollTopProcent) {
+          document.getElementById('first-bg').style.cssText = document.getElementById('first-bg').style.cssText + `transform: translateY(-${scrollTopProcent / 6}%)`;
+          document.getElementById('header').style.cssText = `transform: translateY(-${scrollTopProcent / 6}%)`;
+        }
+      }
+    };*/
   </script>
 </body>
 
