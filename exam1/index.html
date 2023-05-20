@@ -86,7 +86,13 @@
     </header>
     <main>
       <section id="why-choose-us">
-        <div class="bg-image-holder lazy" data-bg="assets/images/bg-why-section.jpg">
+        <div class="bg-image-holder">
+          <picture>
+            <source data-srcset="assets/images/mob-bg-why-section.jpg" media="(max-width: 767px)">
+            <source data-srcset="assets/images/tab-bg-why-section.jpg" media="(max-width: 1023px)">
+            <img class="lazy" data-src="assets/images/bg-why-section.jpg" alt=""
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+          </picture>
         </div>
         <div class="container">
           <div class="two-column">
@@ -143,7 +149,13 @@
         </div>
       </section>
       <section id="first-section-card">
-        <div class="bg-image-holder lazy" data-bg="assets/images/bg1-hotel-section.jpg">
+        <div class="bg-image-holder">
+          <picture>
+            <source data-srcset="assets/images/mob-bg1-hotel-section.jpg" media="(max-width: 767px)">
+            <source data-srcset="assets/images/tab-bg1-hotel-section.jpg" media="(max-width: 1023px)">
+            <img class="lazy" data-src="assets/images/bg1-hotel-section.jpg" alt=""
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+          </picture>
         </div>
         <div class="container">
           <div class="card">
@@ -159,7 +171,13 @@
         </div>
       </section>
       <section id="second-section-card">
-        <div class="bg-image-holder lazy" data-bg="assets/images/bg2-hotel-section.jpg">
+        <div class="bg-image-holder">
+          <picture>
+            <source data-srcset="assets/images/mob-bg2-hotel-section.jpg" media="(max-width: 767px)">
+            <source data-srcset="assets/images/tab-bg2-hotel-section.jpg" media="(max-width: 1023px)">
+            <img class="lazy" data-src="assets/images/bg2-hotel-section.jpg" alt=""
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+          </picture>
         </div>
         <div class="container ">
           <div class="card right-side">
@@ -176,7 +194,13 @@
         </div>
       </section>
       <section id="coment-section">
-        <div class="bg-image-holder lazy" data-bg="assets/images/bg-coment-section.jpg">
+        <div class="bg-image-holder">
+          <picture>
+            <source data-srcset="assets/images/mob-bg-coment-section.jpg" media="(max-width: 767px)">
+            <source data-srcset="assets/images/tab-bg-coment-section.jpg" media="(max-width: 1023px)">
+            <img class="lazy" data-src="assets/images/bg-coment-section.jpg" alt=""
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+          </picture>
         </div>
         <div class="container">
           <h2 class="h2">What Our Tourists Say</h2>
@@ -296,7 +320,7 @@
       }
     });
 
-    /*window.onload = function () {
+    window.onload = function () {
 
       const parallax = document.querySelector('.parallax');
       if (parallax) {
@@ -314,11 +338,10 @@
         });
         observer.observe(document.querySelector('#first-bg'));
         function setParallaxItemsStyle(scrollTopProcent) {
-          document.getElementById('first-bg').style.cssText = document.getElementById('first-bg').style.cssText + `transform: translateY(-${scrollTopProcent / 6}%)`;
-          document.getElementById('header').style.cssText = `transform: translateY(-${scrollTopProcent / 6}%)`;
+          document.getElementById('first-bg').style.cssText = document.getElementById('first-bg').style.cssText + `transform: translateY(-${scrollTopProcent / 5}%)`;
         }
       }
-    };*/
+    };
   </script>
 </body>
 
