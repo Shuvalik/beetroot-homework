@@ -13,10 +13,11 @@ function hello() {
 document.getElementById('hello').innerText = `Привіт, ${user}!`
     }
 };
+
 hello();
 
 function age(el) {
-   let userAge = +prompt('Введить ваше рік народження');
+   let userAge = parseInt(prompt('Введить ваше рік народження'));
    const date = new Date;
    const currentYear = date.getFullYear();
    let resultAges = currentYear - userAge;
@@ -27,7 +28,7 @@ function age(el) {
     };
 };
 function perimetr (el) {
-   let number = +prompt('Введить довжину сторони квадратa');
+   let number = parseInt(prompt('Введить довжину сторони квадратa'));
    if (!isNaN(number) && number && (Math.sign(number) !== -1)) {
       el.previousElementSibling.innerText = `периметр квадратa - ${number * 4}`;
    } else {
@@ -35,7 +36,7 @@ function perimetr (el) {
    }
 }
 function ploshaKola(el) {
-   let number = +prompt('Введить радіус кола');
+   let number = parseInt(prompt('Введить радіус кола'));
    if (!isNaN(number) && number && (Math.sign(number) !== -1)) {
       el.previousElementSibling.innerText = `площa окружності - ${Math.PI * Math.pow(number, 2)}`;
    } else {
@@ -43,9 +44,9 @@ function ploshaKola(el) {
    }
 }
 function speedUser(el) {
-   let lengthBetweenSities = +prompt('Введить відстань в кілометрах між двома містами(тільки число)');
+   let lengthBetweenSities = parseInt(prompt('Введить відстань в кілометрах між двома містами(тільки число)'));
    if (!isNaN(lengthBetweenSities) && lengthBetweenSities && (Math.sign(lengthBetweenSities) !== -1)) {
-      let timeDirections =  +prompt('Введить за скільки годин ви хочете дістатися до іншого міста(тільки число)');
+      let timeDirections =  parseInt(prompt('Введить за скільки годин ви хочете дістатися до іншого міста(тільки число)'));
       if (!isNaN(timeDirections) && timeDirections && (Math.sign(timeDirections) !== -1)) {
          el.previousElementSibling.innerText = `Вам необхідно рухатись зі швидкістю ${lengthBetweenSities / timeDirections} км/год.`;
       } else {
@@ -57,7 +58,7 @@ function speedUser(el) {
 }
  function convertor(el) {
    const curs = 37;
-   let number = +prompt('Введить долари(тільки число)');
+   let number = parseInt(prompt('Введить долари(тільки число)'));
    if (!isNaN(number) && number && (Math.sign(number) !== -1)) {
       el.previousElementSibling.innerText = `${number}$ - ${number * curs}UAH`;
    } else {

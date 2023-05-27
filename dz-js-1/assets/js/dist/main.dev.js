@@ -20,10 +20,11 @@ function hello() {
   }
 }
 
-; //hello();
+;
+hello();
 
 function age(el) {
-  var userAge = +prompt('Введить ваше рік народження');
+  var userAge = parseInt(prompt('Введить ваше рік народження'));
   var date = new Date();
   var currentYear = date.getFullYear();
   var resultAges = currentYear - userAge;
@@ -40,7 +41,7 @@ function age(el) {
 ;
 
 function perimetr(el) {
-  var number = +prompt('Введить довжину сторони квадратa');
+  var number = parseInt(prompt('Введить довжину сторони квадратa'));
 
   if (!isNaN(number) && number && Math.sign(number) !== -1) {
     el.previousElementSibling.innerText = "\u043F\u0435\u0440\u0438\u043C\u0435\u0442\u0440 \u043A\u0432\u0430\u0434\u0440\u0430\u0442a - ".concat(number * 4);
@@ -50,7 +51,7 @@ function perimetr(el) {
 }
 
 function ploshaKola(el) {
-  var number = +prompt('Введить радіус кола');
+  var number = parseInt(prompt('Введить радіус кола'));
 
   if (!isNaN(number) && number && Math.sign(number) !== -1) {
     el.previousElementSibling.innerText = "\u043F\u043B\u043E\u0449a \u043E\u043A\u0440\u0443\u0436\u043D\u043E\u0441\u0442\u0456 - ".concat(Math.PI * Math.pow(number, 2));
@@ -60,10 +61,10 @@ function ploshaKola(el) {
 }
 
 function speedUser(el) {
-  var lengthBetweenSities = +prompt('Введить відстань в кілометрах між двома містами(тільки число)');
+  var lengthBetweenSities = parseInt(prompt('Введить відстань в кілометрах між двома містами(тільки число)'));
 
   if (!isNaN(lengthBetweenSities) && lengthBetweenSities && Math.sign(lengthBetweenSities) !== -1) {
-    var timeDirections = +prompt('Введить за скільки годин ви хочете дістатися до іншого міста(тільки число)');
+    var timeDirections = parseInt(prompt('Введить за скільки годин ви хочете дістатися до іншого міста(тільки число)'));
 
     if (!isNaN(timeDirections) && timeDirections && Math.sign(timeDirections) !== -1) {
       el.previousElementSibling.innerText = "\u0412\u0430\u043C \u043D\u0435\u043E\u0431\u0445\u0456\u0434\u043D\u043E \u0440\u0443\u0445\u0430\u0442\u0438\u0441\u044C \u0437\u0456 \u0448\u0432\u0438\u0434\u043A\u0456\u0441\u0442\u044E ".concat(lengthBetweenSities / timeDirections, " \u043A\u043C/\u0433\u043E\u0434.");
@@ -77,7 +78,7 @@ function speedUser(el) {
 
 function convertor(el) {
   var curs = 37;
-  var number = +prompt('Введить долари(тільки число)');
+  var number = parseInt(prompt('Введить долари(тільки число)'));
 
   if (!isNaN(number) && number && Math.sign(number) !== -1) {
     el.previousElementSibling.innerText = "".concat(number, "$ - ").concat(number * curs, "UAH");
