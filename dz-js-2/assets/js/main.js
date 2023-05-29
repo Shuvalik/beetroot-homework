@@ -29,3 +29,29 @@ function bayChockolate(el) {
       el.previousElementSibling.innerText = `Вкажіть корректно суму грошей в гаманці і ціну однієї шоколадки(тільки число) та `;
    }
 }
+function revertNumber(el) {
+   let number = parseInt(document.getElementById('inputNumber').value);
+   if (number && String(number).length === 3) {
+      let result = (number % 10) * 100 + (Math.trunc(number / 10) % 10) * 10 + Math.trunc(number / 100);
+      el.previousElementSibling.innerText = result;
+   } else {
+      el.previousElementSibling.innerText = 'Вкажіть корректно тризначне число';
+   }
+}
+function bank(el) {
+   const vidsotok = 0.05;
+   let deposut = parseInt(document.getElementById('deposut').value);
+   if (deposut) {
+      el.previousElementSibling.innerText = `Ваші відсотки за 2 місяці будуть складати ${(deposut * vidsotok) / 12}`;
+   } else {
+      el.previousElementSibling.innerText = 'Вкажіть суму вкладу';
+   }
+}
+/*
+ 2 && 0 && 3 = 0 або false
+
+ 2 || 0 || 3 = 2 або  true
+
+2 && 0 || 3 = 3 або true
+
+*/

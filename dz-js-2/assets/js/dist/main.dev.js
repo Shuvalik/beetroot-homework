@@ -35,3 +35,33 @@ function bayChockolate(el) {
     el.previousElementSibling.innerText = "\u0412\u043A\u0430\u0436\u0456\u0442\u044C \u043A\u043E\u0440\u0440\u0435\u043A\u0442\u043D\u043E \u0441\u0443\u043C\u0443 \u0433\u0440\u043E\u0448\u0435\u0439 \u0432 \u0433\u0430\u043C\u0430\u043D\u0446\u0456 \u0456 \u0446\u0456\u043D\u0443 \u043E\u0434\u043D\u0456\u0454\u0457 \u0448\u043E\u043A\u043E\u043B\u0430\u0434\u043A\u0438(\u0442\u0456\u043B\u044C\u043A\u0438 \u0447\u0438\u0441\u043B\u043E) \u0442\u0430 ";
   }
 }
+
+function revertNumber(el) {
+  var number = parseInt(document.getElementById('inputNumber').value);
+
+  if (number && String(number).length === 3) {
+    var result = number % 10 * 100 + Math.trunc(number / 10) % 10 * 10 + Math.trunc(number / 100);
+    el.previousElementSibling.innerText = result;
+  } else {
+    el.previousElementSibling.innerText = 'Вкажіть корректно тризначне число';
+  }
+}
+
+function bank(el) {
+  var vidsotok = 0.05;
+  var deposut = parseInt(document.getElementById('deposut').value);
+
+  if (deposut) {
+    el.previousElementSibling.innerText = "\u0412\u0430\u0448\u0456 \u0432\u0456\u0434\u0441\u043E\u0442\u043A\u0438 \u0437\u0430 2 \u043C\u0456\u0441\u044F\u0446\u0456 \u0431\u0443\u0434\u0443\u0442\u044C \u0441\u043A\u043B\u0430\u0434\u0430\u0442\u0438 ".concat(deposut * vidsotok / 12);
+  } else {
+    el.previousElementSibling.innerText = 'Вкажіть суму вкладу';
+  }
+}
+/*
+ 2 && 0 && 3 = 0 або false
+
+ 2 || 0 || 3 = 2 або  true
+
+2 && 0 || 3 = 3 або true
+
+*/
