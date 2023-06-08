@@ -42,7 +42,7 @@ function bank(el) {
    const vidsotok = 0.05;
    let deposut = parseInt(document.getElementById('deposut').value);
    if (deposut) {
-      el.previousElementSibling.innerText = `Ваші відсотки за 2 місяці будуть складати ${(deposut * vidsotok) / 12}`;
+      el.previousElementSibling.innerText = `Ваші відсотки за 2 місяці будуть складати ${(deposut * vidsotok) * 2}`;
    } else {
       el.previousElementSibling.innerText = 'Вкажіть суму вкладу';
    }

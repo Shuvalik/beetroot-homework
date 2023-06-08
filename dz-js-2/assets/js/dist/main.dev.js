@@ -52,7 +52,7 @@ function bank(el) {
   var deposut = parseInt(document.getElementById('deposut').value);
 
   if (deposut) {
-    el.previousElementSibling.innerText = "\u0412\u0430\u0448\u0456 \u0432\u0456\u0434\u0441\u043E\u0442\u043A\u0438 \u0437\u0430 2 \u043C\u0456\u0441\u044F\u0446\u0456 \u0431\u0443\u0434\u0443\u0442\u044C \u0441\u043A\u043B\u0430\u0434\u0430\u0442\u0438 ".concat(deposut * vidsotok / 12);
+    el.previousElementSibling.innerText = "\u0412\u0430\u0448\u0456 \u0432\u0456\u0434\u0441\u043E\u0442\u043A\u0438 \u0437\u0430 2 \u043C\u0456\u0441\u044F\u0446\u0456 \u0431\u0443\u0434\u0443\u0442\u044C \u0441\u043A\u043B\u0430\u0434\u0430\u0442\u0438 ".concat(deposut * vidsotok * 2);
   } else {
     el.previousElementSibling.innerText = 'Вкажіть суму вкладу';
   }
