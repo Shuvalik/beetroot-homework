@@ -224,34 +224,121 @@ function dayWeek() {
     day < 6 ? day++ : day = 0;
   } while (confirm("\u0417\u0430\u0440\u0430\u0437 ".concat(currentDay, ". \u0425\u043E\u0447\u0435\u0448 \u043F\u043E\u0431\u0430\u0447\u0438\u0442\u0438 \u043D\u0430\u0441\u0442\u0443\u043F\u043D\u0438\u0439 \u0434\u0435\u043D\u044C?")));
 }
-/*
+
 function guessNumber(el) {
-   let start = 1,
+  var start = 0,
       end = 100,
-      middle = 50;
-      alert("загадайте число від 0 до 100");
-   do {
-      let sign = prompt(`Ваше число <, > або = ${middle}(введіть відповідний символ)`);
-      switch (sign) {
-         case '<':;
-            end = middle;
-            middle = Math.round(middle / 2)
-            break;
-         case '>':
-            start = middle;
-            middle = Math.round((end + start) / 2);
-            break;
-         case '=':
-            el.previousElementSibling.innerText = `Ваше число загаданне число ${middle}`;
-            break
-         default:
-            el.previousElementSibling.innerText = 'Ваше коректно відповідний символ';
+      middle = 50,
+      sign = '';
+  alert("загадайте число від 0 до 100");
+
+  do {
+    middle = Math.round((end + start) / 2);
+    sign = prompt("\u0412\u0430\u0448\u0435 \u0447\u0438\u0441\u043B\u043E <, > \u0430\u0431\u043E = ".concat(middle, "(\u0432\u0432\u0435\u0434\u0456\u0442\u044C \u0432\u0456\u0434\u043F\u043E\u0432\u0456\u0434\u043D\u0438\u0439 \u0441\u0438\u043C\u0432\u043E\u043B)"));
+
+    switch (sign) {
+      case '<':
+        ;
+        end = middle;
+        break;
+
+      case '>':
+        start = middle;
+        break;
+    }
+  } while (sign !== '=');
+
+  el.previousElementSibling.innerText = "\u0412\u0430\u0448\u0435 \u0447\u0438\u0441\u043B\u043E \u0437\u0430\u0433\u0430\u0434\u0430\u043D\u043D\u0435 \u0447\u0438\u0441\u043B\u043E ".concat(middle);
+}
+
+function showTable(el) {
+  var outputHTML = '<table><tbody>';
+
+  for (var i = 2; i <= 9; i++) {
+    outputHTML += '<tr>';
+
+    for (var j = 1; j <= 10; j++) {
+      outputHTML += "<td>".concat(i * j, "</td>");
+    }
+
+    ;
+    outputHTML += '</tr>';
+  }
+
+  ;
+  outputHTML += '</tbody></table>';
+  el.previousElementSibling.innerHTML = outputHTML;
+}
+
+function showNextDay(el) {
+  var day = parseInt(prompt('Enter day'));
+  var month = parseInt(prompt('Enter month'));
+  var year = parseInt(prompt('Enter year')); // 10.02.2019 => 11.02.2019
+  // 31.12.2019 => 01.01.2020
+  // 28.02.2020 => 29.02.2020; 
+  //28.02.2021 => 01.03.2021;
+
+  var newDay = day + 1;
+  var newMonth = month;
+  var newYear = year;
+
+  switch (month) {
+    case 1:
+    case 3:
+    case 5:
+    case 7:
+    case 8:
+    case 10:
+    case 12:
+      if (newDay == 32) {
+        newDay = 1;
+        newMonth++;
       }
-   } while ();
-}*/
 
+      ;
+      break;
 
-var scores = [1, 2];
-scores.push(77, 76, 89);
-var l = scores.unshift();
-console.log(l);
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+      if (newDay == 31) {
+        newDay = 1;
+        newMonth++;
+      }
+
+      ;
+      break;
+
+    case 2:
+      if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
+        if (newDay == 30) {
+          newDay = 1;
+          newMonth++;
+        }
+      } else {
+        if (newDay == 29) {
+          newDay = 1;
+          newMonth++;
+        }
+      }
+
+      ;
+      break;
+  }
+
+  if (newMonth == 13) {
+    newMonth = 1;
+    newYear++;
+  }
+
+  var addZero = function addZero(num) {
+    return num < 10 ? '0' + num : '' + num;
+  };
+
+  if (!isNaN(day) && !isNaN(month) && !isNaN(year)) {
+    el.previousElementSibling.innerText = "next date: ".concat(addZero(newDay), "/").concat(addZero(newMonth), "/").concat(newYear);
+  } else {
+    el.previousElementSibling.innerText = 'Enter correct data';
+  }
+}

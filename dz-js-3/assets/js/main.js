@@ -177,32 +177,111 @@ function dayWeek() {
       (day < 6) ? day++ : day = 0;
    } while (confirm(`Зараз ${currentDay}. Хочеш побачити наступний день?`))
 }
-/*
+
 function guessNumber(el) {
-   let start = 1,
+   let start = 0,
       end = 100,
-      middle = 50;
+      middle = 50,
+      sign = '';
       alert("загадайте число від 0 до 100");
    do {
-      let sign = prompt(`Ваше число <, > або = ${middle}(введіть відповідний символ)`);
+      middle = Math.round((end + start) / 2);
+      sign = prompt(`Ваше число <, > або = ${middle}(введіть відповідний символ)`);
       switch (sign) {
          case '<':;
             end = middle;
-            middle = Math.round(middle / 2)
             break;
          case '>':
             start = middle;
-            middle = Math.round((end + start) / 2);
             break;
-         case '=':
-            el.previousElementSibling.innerText = `Ваше число загаданне число ${middle}`;
-            break
-         default:
-            el.previousElementSibling.innerText = 'Ваше коректно відповідний символ';
       }
-   } while ();
-}*/
-let scores = [1, 2]
-scores.push( 77, 76, 89 );
-let l = scores.unshift();
-console.log(l);
+   } while (sign !== '=');
+   el.previousElementSibling.innerText = `Ваше число загаданне число ${middle}`;
+}
+function showTable(el) {
+   let outputHTML = '<table><tbody>';
+   for (let i = 2; i <= 9; i++) {
+      outputHTML += '<tr>';
+      for (let j = 1; j <= 10; j++) {
+         outputHTML += `<td>${i * j}</td>`;
+      };
+      outputHTML += '</tr>';
+   };
+   outputHTML += '</tbody></table>';
+   el.previousElementSibling.innerHTML = outputHTML;
+}
+
+function showNextDay(el){
+    let day = parseInt(prompt('Enter day'));
+ let month = parseInt(prompt('Enter month'));
+ let year = parseInt(prompt('Enter year'));
+ // 10.02.2019 => 11.02.2019
+// 31.12.2019 => 01.01.2020
+// 28.02.2020 => 29.02.2020; 
+//28.02.2021 => 01.03.2021;
+let newDay = day + 1;
+let newMonth = month;
+let newYear = year;
+switch (month) {
+   case 1:
+   case 3:
+   case 5: 
+   case 7: 
+   case 8: 
+   case 10:
+   case 12:
+      if (newDay == 32) {
+         newDay = 1;
+         newMonth++;
+      };
+      break;
+   case 4:
+   case 6:
+   case 9: 
+   case 11: 
+   if (newDay == 31) {
+         newDay = 1;
+         newMonth++;
+      };
+      break;
+   case 2:
+      if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+         if (newDay == 30) {
+            newDay = 1;
+            newMonth++;
+         }
+      } else {
+          if (newDay == 29) {
+            newDay = 1;
+            newMonth++;
+         }  
+      };
+      break;
+}
+if (newMonth == 13) {
+   newMonth = 1;
+   newYear++;
+}
+const addZero = num => num < 10 ? '0' + num : '' + num;
+if (!isNaN(day) && !isNaN(month) && !isNaN(year)) {
+
+   el.previousElementSibling.innerText = `next date: ${addZero(newDay)}/${addZero(newMonth)}/${newYear}`;
+} else {
+   el.previousElementSibling.innerText = 'Enter correct data'
+}
+}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
