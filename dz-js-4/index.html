@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+</head>
+
+<body class="bg-success bg-opacity-75">
+    <div class="page-wrapper">
+        <header class="header">
+            <div class="container">
+
+            </div>
+        </header>
+        <main class="container-sm">
+            <div class="card mb-4">
+                <h5 class="card-header">Створи функцію, яка буде виводити кількість переданих їй аргументів.</h5>
+                <div class="card-body">
+                    <p class="card-text"></p>
+                    <button type="button" onclick="showArgument(this, 4, 'hello')" class="btn btn-primary">Run</button>
+
+                </div>
+            </div>
+            <div class="card mb-4">
+                <h5 class="card-header">
+                    Напиши функцію, яка приймає 2 числа і повертає :
+                    -1, якщо перше число менше, ніж друге;
+                    1 - якщо перше число більше, ніж друге;
+                    0 - якщо числа рівні.
+                </h5>
+                <div class="card-body">
+                    <input type="number" id="number1">
+                    <input type="number" id="number2">
+                    <p class="card-text"></p>
+                    <button type="button" onclick="onFunction(this)" class="btn btn-primary">Run</button>
+
+                </div>
+            </div>
+            <div class="card mb-4">
+                <h5 class="card-header">
+                    Напиши функцію, яка обчислює факторіал переданого їй числа.
+                </h5>
+                <div class="card-body">
+                    <input type="number" id="number11" placeholder="number">
+                    <p class="card-text"></p>
+                    <button type="button" onclick="factorial(this)" class="btn btn-primary">Run</button>
+            
+                </div>
+            </div>
+            <div class="card mb-4">
+                <h5 class="card-header">
+                    Напиши функцію, яка приймає три окремі цифри і перетворює їх в одне число. Наприклад: цифри 1, 4, 9 перетворяться в
+                    число 149.
+                </h5>
+                <div class="card-body">
+                    <input type="number" id="number111" placeholder="number">
+                    <input type="number" id="number222" placeholder="number">
+                    <input type="number" id="number333" placeholder="number">
+                    <p class="card-text"></p>
+                    <button type="button" onclick="createNUMBER(this)" class="btn btn-primary">Run</button>
+            
+                </div>
+            </div>
+            <div class="card mb-4">
+                <h5 class="card-header">
+                    Напиши функцію, яка приймає довжину і ширину прямокутника і обчислює його площу. Якщо в функцію передали 1 параметр, то
+                    вона обчислює площу квадрата.
+                </h5>
+                <div class="card-body">
+                    <input type="number" id="number1111" placeholder="side1">
+                    <input type="number" id="number2222" placeholder="side2">
+                    <p class="card-text"></p>
+                    <button type="button" onclick="onFunction2(this)" class="btn btn-primary">Run</button>
+            
+                </div>
+            </div>
+            <div class="card mb-4">
+                <h5 class="card-header">
+                    Напиши функцію, яка перевіряє, чи є передане їй число “досконалим числом”. 
+                    Досконале число - це число, яке дорівнює сумі
+                    всіх своїх дільників.
+                </h5>
+                <div class="card-body">
+                    <input type="number" id="number11111" placeholder="Вкажіть число">
+                    <p class="card-text"></p>
+                    <button type="button" onclick="checkNumber(this)" class="btn btn-primary">Run</button>
+            
+                </div>
+            </div>
+            <div class="card mb-4">
+                <h5 class="card-header">
+                    Напиши функцію, яка приймає мінімальне і максимальне значення для діапазону, і виводить тільки ті числа з діапазону, які
+                    є досконалими. Використовуй написану раніше функцію, щоб дізнатися, чи є це число досконалим.
+                </h5>
+                <div class="card-body">
+                    <input type="number" id="number111111" placeholder="Вкажіть мінімальне значення для діапазону">
+                    <input type="number" id="number222222" placeholder="Вкажіть максимальне значення для діапазону">
+                    <p class="card-text"></p>
+                    <button type="button" onclick="findNumber(this)" class="btn btn-primary">Run</button>
+            
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="container">
+
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="assets/js/main.js"></script>
+<script>
+
+</script>
+
+</html>
