@@ -1,5 +1,6 @@
 let CART = [
    {
+      id: 1234,
       name: 'Milk',
       price: 30.00,
       qty: 2,
@@ -7,6 +8,7 @@ let CART = [
       isBuy: false
    },
    {
+      id: 2345,
       name: 'Apple',
       price: 10.25,
       qty: 3,
@@ -19,6 +21,11 @@ function addToCart() {
    const name = document.getElementById("prod_name").value;
    const qty = document.getElementById("prod_qty").valueAsNumber;
    const price = document.getElementById("prod_price").valueAsNumber;
+   function getRandomIntInclusive(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
+      }
    if (name === '' || isNaN(price) || isNaN(qty)) {
       toast.danger("Enter product info");
       return ;
@@ -32,6 +39,7 @@ function addToCart() {
 
       CART.push(
          {
+            id: getRandomIntInclusive(1000, 9999),
             name,
             qty,
             price,
@@ -48,7 +56,8 @@ function addToCart() {
 }
 function removeProduct(_elm) {
    if (confirm("Delete product?")) {
-      const index = _elm.closest('tr').dataset.index;
+      const id = +_elm.closest('tr').dataset.id;
+      const index = CART.findIndex((product) => product.id === id);
       CART.splice(index, 1);
       _elm.closest('tr').remove();
       toast.success('Product removed');
@@ -57,7 +66,9 @@ function removeProduct(_elm) {
 }
 function buyProduct(_elm) {
    const tr = _elm.closest('tr');
-   const index = tr.dataset.index;
+   const id = +tr.dataset.id;
+   const index = CART.findIndex((product) => product.id === id);
+   console.log(index, id);
    CART[index].isBuy = true;
    tr.children[1].innerHTML = '<span class="badge bg-success">Buyed</span>';
    tr.children[tr.children.length - 1].innerText = '';
@@ -70,7 +81,8 @@ function buyProduct(_elm) {
 function changeProductQTY(_elm) {
    const operator = _elm.dataset.change;
    const tr = _elm.closest('tr');
-   const index = tr.dataset.index;
+   const id = +tr.dataset.id;
+   const index = CART.findIndex((product) => product.id === id);
    CART[index].qty = CART[index].qty + parseInt(operator);
    if (CART[index].qty === 0) {
       const removeBtn = tr.querySelector('.btn-danger');
@@ -86,8 +98,8 @@ function changeProductQTY(_elm) {
 }
 function viewCartList() {
    let tBody = '';
-   CART.forEach(function(product, index) {
-       tBody += cartListRow(product, index);
+   CART.forEach(function(product) {
+       tBody += cartListRow(product);
    });
    document.getElementById("cart_tbody").innerHTML = tBody;
    showTotal();
@@ -98,11 +110,11 @@ function showTotal() {
    document.getElementById("bought").innerHTML  = (totals.bought).toFixed(2);
    document.getElementById("notBought").innerHTML  = (totals.notBought).toFixed(2);
 }
-function cartListRow(product, index = 0) {
+function cartListRow(product) {
    let badge = product.isBuy ? `<span class="badge bg-success">Buyed</span>` : 
                                `<span class="badge bg-danger">Not Buyed</span>` 
       return `
-      <tr data-index="${index}">
+      <tr data-id="${product.id}">
          <td>${product.name}</td>
          <td>${badge}</td>
          <td>

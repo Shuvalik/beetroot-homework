@@ -30,6 +30,7 @@ const toast = {
       }
       toastHtmlElement.classList.add(type);
       toastHtmlElement.innerText = text;
+      document.body.append(toastHtmlElement);
       /*const _this = this;
       setTimeout(function(){   
          _this.hide();
