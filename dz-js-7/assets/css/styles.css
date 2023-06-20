@@ -1,0 +1,96 @@
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+  object-fit: cover;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a, button {
+  transition: all 0.2s ease;
+}
+
+@font-face {
+  /*font-display: swap;
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Black.woff2') format('woff2');
+  font-weight: 900;*/
+}
+/*==variables==*/
+/*== main start ==*/
+.container {
+  width: min(90%, 1170px);
+  margin-inline: auto;
+}
+
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
+
+ul {
+  list-style: decimal;
+}
+
+.vstack {
+  align-items: center;
+}
+
+.vstack div {
+  width: 65px;
+  height: 65px;
+  position: relative;
+  overflow: hidden;
+}
+
+.vstack > div::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.vstack > div.active::after {
+  display: none;
+}
+
+/*== main end ==*/
+/*== header start ==*/
+/*== header end ==*/
+/*== main section start ==*/
+/*== main section end ==*/
+/*== footer start ==*/
+/*== footer end ==*/
