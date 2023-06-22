@@ -1,0 +1,95 @@
+@use "reset" as *;
+@use "fonts" as *;
+/*==variables==*/
+@mixin font($size-px, $lh) {
+    font-size: ($size-px / 16) * 1rem;
+    line-height: $lh / $size-px;
+}
+$color-font: #232323;
+/*== main start ==*/
+body {
+    //@include font_family($raleway, 500);
+    //@include font(14, 24);
+}
+.container {
+    width: min(90%, 1170px);
+    margin-inline: auto;
+}
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main {
+  flex-grow: 1;
+}
+ul {
+    list-style: decimal;
+}
+.editor {
+  position: relative;
+  width: 80%;
+  height: 250px;
+}
+#textHolderEditor, #editorText {
+  width: 80%;
+  height: 200px;
+  border: 1px solid rgb(43, 226, 217);
+  border-radius: 5px;
+  position: absolute;
+  left: 5%;
+  top: 25px;
+  padding: 20px 25px;
+  background-color: #fff;
+}
+#editorText {
+  background-color: rgb(43, 226, 217);
+}
+.editor .active {
+  z-index: 2;
+}
+table, td {
+  border: 1px solid #000;
+  text-align: center;
+}
+#sortData{
+  cursor: pointer;
+}
+#responsiveDiv {
+  width: 300px;
+  height: 150px;
+  background-color: aquamarine;
+  border: 1px solid rgb(43, 226, 217);
+  position: relative;
+  padding: 20px 25px;
+}
+#interactive {
+  position: absolute;
+  border: 15px solid rgb(43, 226, 217);
+  border-top-color: transparent;
+  border-left-color: transparent;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+}
+.holderRespDiv {
+  width: 100vw;
+  height: 100vh;
+}
+/*== main end ==*/
+
+/*== header start ==*/
+/*== header end ==*/
+
+/*== main section start ==*/
+/*== main section end ==*/
+
+/*== footer start ==*/
+/*== footer end ==*/
