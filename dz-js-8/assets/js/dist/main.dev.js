@@ -74,39 +74,29 @@ document.getElementById('sortData').addEventListener('click', function (el) {
   }
 
   ;
-}); //console.log(document.querySelectorAll('#interactive')[0].offsetTop);
-
-document.getElementById('interactive').addEventListener('mousedown', function (event) {
-  //e.preventDefault();
-  var responsiveDiv = document.getElementById('responsiveDiv');
-  var startHeight = responsiveDiv.offsetHeight;
-  var startWidth = responsiveDiv.offsetWidth;
-  console.log(responsiveDiv.style.height);
-
-  function onMouseMove(event) {
-    moveAt(event.pageX, event.pageY); //console.log(event.pageX, event.pageY);
-    //console.log(responsiveDiv.offsetHeight);
-    //console.log(document.querySelectorAll('#responsiveDiv'));
-  }
-
-  ;
-
-  function moveAt(startCoordX, startCoordY) {
-    var newHeight = startHeight + (startCoordX - event.pageX);
-    responsiveDiv.style.height = newHeight + 'px';
-    var newWidth = startWidth + (startCoordY - event.pageY);
-    responsiveDiv.style.width = newWidth + 'px'; //console.log(`${startHeight} + (${startCoordX} - (${event.pageX}))`);
-  }
-
-  document.addEventListener('mousemove', onMouseMove);
-  document.getElementById('interactive').addEventListener('mouseup', function (event) {
-    document.removeEventListener('mousemove', onMouseMove);
-  });
-  document.addEventListener('mouseup', function (event) {
-    document.removeEventListener('mousemove', onMouseMove);
-  });
 });
-
-document.getElementById('interactive').ondragstart = function () {
-  return false;
-};
+var buttonCorner = document.getElementById('interactive');
+var responsiveDiv = document.getElementById('responsiveDiv');
+var isResizable = false,
+    startHeight = 0,
+    startWidth = 0,
+    startCoordX = 0,
+    startCoordY = 0;
+buttonCorner.addEventListener('mousedown', function (event) {
+  isResizable = true;
+  startCoordX = event.pageX;
+  startCoordY = event.pageY;
+  startHeight = responsiveDiv.offsetHeight;
+  startWidth = responsiveDiv.offsetWidth;
+});
+window.addEventListener('mousemove', function (event) {
+  if (isResizable) {
+    var newHeight = startHeight - (startCoordY - event.pageY);
+    responsiveDiv.style.height = newHeight + 'px';
+    var newWidth = startWidth - (startCoordX - event.pageX);
+    responsiveDiv.style.width = newWidth + 'px';
+  }
+});
+window.addEventListener('mouseup', function () {
+  isResizable = false;
+});

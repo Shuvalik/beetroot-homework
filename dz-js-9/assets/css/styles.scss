@@ -1,0 +1,39 @@
+@use "reset" as *;
+@use "fonts" as *;
+/*==variables==*/
+@mixin font($size-px, $lh) {
+    font-size: ($size-px / 16) * 1rem;
+    line-height: $lh / $size-px;
+}
+$color-font: #232323;
+$main-color: #2B3040;
+/*== main start ==*/
+body {
+    @include font_family('Lato', 400);
+    @include font(14, 22);
+    background-color: #2B3040;
+}
+.container {
+    width: min(90%, 1000px);
+    height: 860px;
+    background: url("/assets/images/bg-image.jpg") 50% 50% no-repeat/cover;
+    margin-inline: auto;
+}
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main {
+  flex-grow: 1;
+}
+/*== main end ==*/
+
+/*== header start ==*/
+/*== header end ==*/
+
+/*== main section start ==*/
+/*== main section end ==*/
+
+/*== footer start ==*/
+/*== footer end ==*/
