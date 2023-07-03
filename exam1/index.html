@@ -309,16 +309,6 @@
   <script>
     var lazyLoadInstance = new LazyLoad();
 
-    jQuery(document).ready(function () {
-      changesHeight = function () {
-        $('#mobMainMenu nav').slideToggle();
-      }
-    });
-    function openCloseMenu(el) {
-      el.classList.toggle('is-active');
-      document.getElementById('mobMainMenu').classList.toggle('open');
-      changesHeight();
-    };
 
     window.addEventListener('scroll', function () {
       if (window.scrollY > document.getElementById('first-section').offsetHeight) {

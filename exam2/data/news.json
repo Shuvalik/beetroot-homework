@@ -1,0 +1,52 @@
+[
+    {
+        "title": "SEE THE UNMATCHED BEAUTY OF THE GREAT.",
+        "text": "Free directories: directories are perfect for customers that are searching for...",
+        "image": "assets/images/news-img1.jpg",
+        "link": "#currentNews1",
+        "author-image": "assets/images/autor-photo1.jpg",
+        "author-name": "ALJA BRUN",
+        "author-link": "#author1",
+        "pubdate": "2020-02-20"
+    },
+    {
+        "title": "EFFECTIVE ADVERTISING POINTERS.",
+        "text": "Having a home based business is a wonderful asset to your life...",
+        "image": "assets/images/news-img2.jpg",
+        "link": "#currentNews2",
+        "author-image": "assets/images/autor-photo2.jpg",
+        "author-name": "DOMINIC FREEMAN",
+        "author-link": "#author2",
+        "pubdate": "2019-12-13"
+    },
+    {
+        "title": "HYPNOTIZE YOURSELF INTO THE GHOST.",
+        "text": "There are many things that are important to catalog design...",
+        "image": "assets/images/news-img3.jpg",
+        "link": "#currentNews3",
+        "author-image": "assets/images/autor-photo3.jpg",
+        "author-name": "ALICE WARD",
+        "author-link": "#author3",
+        "pubdate": "2019-11-30"
+    },
+    {
+        "title": "SEE THE UNMATCHED BEAUTY OF THE GREAT.4",
+        "text": "Free directories: directories are perfect for customers that are searching for...",
+        "image": "assets/images/news-img1.jpg",
+        "link": "#currentNews4",
+        "author-image": "assets/images/autor-photo1.jpg",
+        "author-name": "ALJA BRUN",
+        "author-link": "#author4",
+        "pubdate": "2020-02-20"
+    },
+    {
+        "title": "SEE THE UNMATCHED BEAUTY OF THE GREAT.5",
+        "text": "Free directories: directories are perfect for customers that are searching for...",
+        "image": "assets/images/news-img1.jpg",
+        "link": "#currentNews5",
+        "author-image": "assets/images/autor-photo1.jpg",
+        "author-name": "ALJA BRUN",
+        "author-link": "#author5",
+        "pubdate": "2020-02-20"
+    }
+]
