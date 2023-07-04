@@ -1,9 +1,6 @@
 "use strict";
 
-var _telegram_token = _interopRequireDefault(require("./telegram_token.js"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
+//import getToken from "./telegram_token.js";
 $(function () {
   /*variables */
   var headerOffsetTop = $('.header').offset().top;
@@ -123,7 +120,8 @@ $(function () {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            apiToken = (0, _telegram_token["default"])();
+            apiToken = ""; // getToken();
+
             chatId = "-1001738000762";
             urlString = "https://api.telegram.org/bot".concat(apiToken, "/sendMessage");
             $.ajax({

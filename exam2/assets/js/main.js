@@ -1,4 +1,4 @@
-import getToken from "./telegram_token.js";
+//import getToken from "./telegram_token.js";
 $(function () {
     /*variables */
     const headerOffsetTop = $('.header').offset().top;
@@ -93,7 +93,7 @@ $(function () {
     }
 
     async function sendMessage(msg) {
-        let apiToken = getToken();
+        let apiToken =  "";  // getToken();
         let chatId = "-1001738000762";
         let urlString = `https://api.telegram.org/bot${apiToken}/sendMessage`;
         $.ajax({
