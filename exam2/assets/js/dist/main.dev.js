@@ -8,7 +8,7 @@ $(function () {
 
   function setClassHeader() {
     var header = $('.header');
-    $(this).scrollTop() > headerOffsetTop ? header.addClass('sticky') : header.removeClass('sticky');
+    $(window).scrollTop() > headerOffsetTop ? header.addClass('sticky') : header.removeClass('sticky');
   }
 
   ;

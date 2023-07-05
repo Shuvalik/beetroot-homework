@@ -5,7 +5,7 @@ $(function () {
     /* funstions defenition */
     function setClassHeader() {
         let header = $('.header');
-        ($(this).scrollTop() > headerOffsetTop) ? header.addClass('sticky') : header.removeClass('sticky');
+        ($(window).scrollTop() > headerOffsetTop) ? header.addClass('sticky') : header.removeClass('sticky');
         
     };
     function getNews() {

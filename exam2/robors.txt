@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /assets/
+Disallow: /data/
+Sitemap: https://shuvalik.github.io/beetroot-homework/exam2/sitemap.xml
+Host: shuvalik.github.io
